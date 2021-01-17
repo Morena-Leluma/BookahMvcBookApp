@@ -1,0 +1,29 @@
+﻿@model IEnumerable<BookahMvcBookApp.Models.tblCategory>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>View Category</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CatId</td>
+                <td>@item.Name</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Category", new { id = item.CatId})" class="btn btn-info"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
