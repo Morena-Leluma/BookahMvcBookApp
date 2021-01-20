@@ -3,27 +3,32 @@
     ViewBag.Title = "Index";
 }
 
-<h2>View Category</h2>
+<div class="container">
+    <h2>View Category</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            @*<tr>
-                <td>@item.CatId</td>
-                <td>@item.Name</td>
-                <td>
-                    <a href="@Url.Action("Edit", "Category", new { id = item.CatId})" class="btn btn-info"></a>
-                </td>
-            </tr>*@
-        }
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CatId</td>
+                    <td>@item.Name</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Category", new { id = item.CatId})" class="btn btn-info">Edit</a>
+                        <a href="@Url.Action("Delete", "Caregory", new { id = item.CatId})" class="btn btn-danger">Delete</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
 

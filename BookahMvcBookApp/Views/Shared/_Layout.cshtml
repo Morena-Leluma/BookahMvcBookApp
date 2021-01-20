@@ -1,31 +1,31 @@
-﻿<DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="~/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/animate.css">
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="~/css/aos.css">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="~/css/ionicons.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/css/jquery.timepicker.css">
 
 
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/icomoon.css">
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
-<body>
 
+<body>
     <div class="py-1 bg-primary">
         <div class="container">
             <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -33,11 +33,11 @@
                     <div class="row d-flex">
                         <div class="col-md pr-4 d-flex topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                            <span class="text">+ 27 83 627 8483</span>
+                            <span class="text">+ 1235 2355 98</span>
                         </div>
                         <div class="col-md pr-4 d-flex topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-                            <span class="text">grouppbookah@gmail.com</span>
+                            <span class="text">youremail@email.com</span>
                         </div>
                         <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
                             <span class="text">3-5 Business days delivery &amp; Free Returns</span>
@@ -50,7 +50,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light sleep" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="@Url.Action("Index","Home")">BOOKAH Web</a>
+            <a class="navbar-brand" href="@Url.Action("Index","Home")">MyStore</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
@@ -74,13 +74,13 @@
                         if (User.IsInRole("1"))
                         {
 
-                            <li class="nav-item "><span class="nav-link">Welcome @Session["User"]</span></li>
+                            <li class="nav-item "><span class="nav-link">Welcome to @Session["User"]</span></li>
                             <li class="nav-item active"><a href="index.html" class="nav-link">Dashboard</a></li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Books</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown04">
                                     <a class="dropdown-item" href="shop.html">Add Book</a>
-                                    <a class="dropdown-item" href="wishlist.html">View Books</a>
+                                    <a class="dropdown-item" href="wishlist.html">View Product</a>
                                 </div>
                             </li>
                             <li class="nav-item"><a href="about.html" class="nav-link">Users</a></li>
@@ -93,9 +93,9 @@
                         if (User.IsInRole("2"))
                         {
 
-                            <li class="nav-item "><span class="nav-link">Welcome @Session["User"]</span></li>
+                            <li class="nav-item "><span class="nav-link">Welcome to @Session["User"]</span></li>
                             <li class="nav-item active"><a href="index.html" class="nav-link">Dashboard</a></li>
-                            <li class="nav-item"><a href="index.html" class="nav-link">View Books</a></li>
+                            <li class="nav-item"><a href="index.html" class="nav-link">View Products</a></li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Orders</a></li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Profile</a></li>
@@ -104,12 +104,16 @@
 
                         }
                     }
-                                       
+
+
+
+
                 </ul>
 
             </div>
         </div>
     </nav>
+
     <section class="ftco-section">
         <div class="container">
             <div class="row no-gutters ftco-services">
@@ -120,21 +124,21 @@
                         </div>
                         <div class="media-body">
                             <h3 class="heading">Free Shipping</h3>
-                            <span>On order over R3000</span>
+                            <span>On order over R2500</span>
                         </div>
                     </div>
                 </div>
-                @*<div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
-                        <div class="media block-6 services mb-md-0 mb-4">
-                            <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
-                                <span class="flaticon-diet"></span>
-                            </div>
-                            <div class="media-body">
-                                <h3 class="heading">Always Fresh</h3>
-                                <span>Product well package</span>
-                            </div>
+                <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+                    <div class="media block-6 services mb-md-0 mb-4">
+                        <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
+                            <span class="flaticon-diet"></span>
                         </div>
-                    </div>*@
+                        <div class="media-body">
+                            <h3 class="heading">Always Reliable</h3>
+                            <span>Well taken care of</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
                     <div class="media block-6 services mb-md-0 mb-4">
                         <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
@@ -142,7 +146,7 @@
                         </div>
                         <div class="media-body">
                             <h3 class="heading">Superior Quality</h3>
-                            <span>Quality TextBooks</span>
+                            <span>Quality Products</span>
                         </div>
                     </div>
                 </div>
@@ -166,16 +170,16 @@
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center mb-3 pb-3">
-                <div class="col-md-12 heading-section text-center ftco-animate fadeInUp ftco-animated">
-                    <span class="subheading">Featured Books</span>
-                    <h2 class="mb-4">Our Books</h2>
-                    <p>“The only true wisdom is in knowing you know nothing.” - Socrates</p>
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                    <span class="subheading">Featured Products</span>
+                    <h2 class="mb-4">Our Products</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod">
                             <img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
@@ -205,7 +209,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod">
                             <img class="img-fluid" src="images/product-2.jpg" alt="Colorlib Template">
@@ -234,7 +238,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod">
                             <img class="img-fluid" src="images/product-3.jpg" alt="Colorlib Template">
@@ -263,7 +267,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod">
                             <img class="img-fluid" src="images/product-4.jpg" alt="Colorlib Template">
@@ -294,7 +298,7 @@
                 </div>
 
 
-                <div class="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod">
                             <img class="img-fluid" src="images/product-5.jpg" alt="Colorlib Template">
@@ -324,7 +328,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod">
                             <img class="img-fluid" src="images/product-6.jpg" alt="Colorlib Template">
@@ -353,7 +357,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod">
                             <img class="img-fluid" src="images/product-7.jpg" alt="Colorlib Template">
@@ -382,7 +386,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 ftco-animate fadeInUp ftco-animated">
+                <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod">
                             <img class="img-fluid" src="images/product-8.jpg" alt="Colorlib Template">
@@ -427,8 +431,8 @@
             <div class="row mb-5">
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Bookah</h2>
-                        <p>“The only true wisdom is in knowing you know nothing.” - Socrates</p>
+                        <h2 class="ftco-heading-2">Vegefoods</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                             <li class="ftco-animate fadeInUp ftco-animated"><a href="#"><span class="icon-twitter"></span></a></li>
                             <li class="ftco-animate fadeInUp ftco-animated"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -469,9 +473,9 @@
                         <h2 class="ftco-heading-2">Have a Questions?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">20 President Brand St, Bloemfontein Central, Bloemfontein, 9301, RSA</span></li>
-                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+27 83 627 8483</span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@bookahweb.com</span></a></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -491,9 +495,12 @@
         </div>
     </footer>
 
+
+
+
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
-    <!-- footer links-->
+    <!-- footer links -->
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
     <script src="~/js/popper.min.js"></script>
