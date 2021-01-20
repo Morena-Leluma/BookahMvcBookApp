@@ -11,11 +11,46 @@ namespace BookahMvcBookApp.Controllers
     public class AccountController : Controller
     {
         dbBookahMvcBookAppEntities db = new dbBookahMvcBookAppEntities();
-        // GET: Account
-        public ActionResult Index()
+
+        //// GET: Account
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        #region user registration 
+
+        public ActionResult Register()
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Register(tblUser t)
+        {
+            tblUser u = new tblUser();
+            if (ModelState.IsValid)
+            {
+                u.Firstname = t.Firstname;
+                u.Lastname = t.Lastname;
+                u.PhoneNumber = t.PhoneNumber;
+                u.IDNumber = t.IDNumber;
+                u.Email = t.Email;
+                u.Password = t.Password;
+                u.RoleType = 2;
+                db.tblUsers.Add(u);
+                db.SaveChanges();
+
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                TempData["msg"] = "Not Register!!";
+            }
+            return View();
+        }
+
+        #endregion
 
         public ActionResult Login()
         {
@@ -31,14 +66,14 @@ namespace BookahMvcBookApp.Controllers
                 {
                     Session["uid"] = query.UserId;
                     FormsAuthentication.SetAuthCookie(query.Email, false);
-                    Session["User"] = query.Email;
+                    Session["User"] = query.Lastname;
                     return RedirectToAction("Index", "Home");
                 }
                 else if (query.RoleType == 2)
                 {
                     Session["uid"] = query.UserId;
                     FormsAuthentication.SetAuthCookie(query.Email, false);
-                    Session["User"] = query.Email;
+                    Session["User"] = query.Lastname;
                     return RedirectToAction("Index", "Home");
                 }
 
@@ -51,5 +86,13 @@ namespace BookahMvcBookApp.Controllers
             return View();
         }
 
+        #region logout 
+
+        public ActionResult Signout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+        #endregion
     }
 }
