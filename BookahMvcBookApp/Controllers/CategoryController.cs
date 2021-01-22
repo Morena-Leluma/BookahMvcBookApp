@@ -35,7 +35,7 @@ namespace BookahMvcBookApp.Controllers
             }
             else
             {
-                TempData["msg"] = "Not Inserted in category.";
+                TempData["msg"] = "Category not inserted.";
             }
             return View();
         }
