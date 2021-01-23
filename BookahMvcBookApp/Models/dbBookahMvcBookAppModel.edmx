@@ -4,19 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="dbBookahMvcBookAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
+      <Schema Namespace="dbBookahMvcBookAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblBooks">
           <Key>
             <PropertyRef Name="BookId" />
           </Key>
-          <Property Name="BookId" Nullable="false" Type="int" />
-          <Property Name="Author" MaxLength="50" Type="varchar" />
-          <Property Name="Description" MaxLength="50" Type="varchar" />
-          <Property Name="Edition" MaxLength="50" Type="varchar" />
-          <Property Name="ISBN" MaxLength="50" Type="varchar" />
-          <Property Name="Publisher" MaxLength="50" Type="varchar" />
+          <Property Name="BookId" Type="int" Nullable="false" />
+          <Property Name="Author" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Edition" Type="varchar" MaxLength="50" />
+          <Property Name="ISBN" Type="varchar" MaxLength="50" />
+          <Property Name="Publisher" Type="varchar" MaxLength="50" />
           <Property Name="Picture" Type="varchar(max)" />
-          <Property Name="Title" MaxLength="50" Type="varchar" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
           <Property Name="Unit" Type="int" />
           <Property Name="CatId" Type="int" />
         </EntityType>
@@ -24,51 +24,51 @@
           <Key>
             <PropertyRef Name="CatId" />
           </Key>
-          <Property Name="CatId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Name" MaxLength="50" Type="varchar" />
+          <Property Name="CatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblInvoice">
           <Key>
             <PropertyRef Name="InvoiceId" />
           </Key>
-          <Property Name="InvoiceId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="InvoiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderId" Type="int" />
           <Property Name="UserId" Type="int" />
           <Property Name="Bill" Type="int" />
-          <Property Name="Payment" MaxLength="50" Type="varchar" />
+          <Property Name="Payment" Type="varchar" MaxLength="50" />
           <Property Name="InvoiceDate" Type="date" />
         </EntityType>
         <EntityType Name="tblOrder">
           <Key>
             <PropertyRef Name="OrderId" />
           </Key>
-          <Property Name="OrderId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BookId" Type="int" />
-          <Property Name="Contact" MaxLength="50" Type="varchar" />
-          <Property Name="Address" MaxLength="50" Type="varchar" />
+          <Property Name="Contact" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
           <Property Name="Unit" Type="int" />
           <Property Name="Quantity" Type="int" />
-          <Property Name="Total" MaxLength="10" Type="nchar" />
+          <Property Name="Total" Type="nchar" MaxLength="10" />
           <Property Name="OrderDate" Type="date" />
-          <Property Name="PayMethod" MaxLength="50" Type="varchar" />
+          <Property Name="PayMethod" Type="varchar" MaxLength="50" />
           <Property Name="UserId" Type="int" />
         </EntityType>
         <EntityType Name="tblUser">
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="UserId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Firstname" MaxLength="50" Type="varchar" />
-          <Property Name="Lastname" MaxLength="50" Type="varchar" />
-          <Property Name="PhoneNumber" MaxLength="50" Type="varchar" />
-          <Property Name="Email" MaxLength="100" Type="varchar" />
-          <Property Name="Password" MaxLength="50" Type="varchar" />
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="50" />
+          <Property Name="Lastname" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
           <Property Name="RoleType" Type="int" />
           <Property Name="IDNumber" Type="int" />
         </EntityType>
         <Association Name="FK__tblBooks__CatId__2B3F6F97">
-          <End Type="Self.tblCategories" Multiplicity="0..1" Role="tblCategories" />
-          <End Type="Self.tblBooks" Multiplicity="*" Role="tblBooks" />
+          <End Role="tblCategories" Type="Self.tblCategories" Multiplicity="0..1" />
+          <End Role="tblBooks" Type="Self.tblBooks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblCategories">
               <PropertyRef Name="CatId" />
@@ -79,8 +79,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__tblInvoic__Order__32E0915F">
-          <End Type="Self.tblOrder" Multiplicity="0..1" Role="tblOrder" />
-          <End Type="Self.tblInvoice" Multiplicity="*" Role="tblInvoice" />
+          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="0..1" />
+          <End Role="tblInvoice" Type="Self.tblInvoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblOrder">
               <PropertyRef Name="OrderId" />
@@ -91,8 +91,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__tblInvoic__UserI__31EC6D26">
-          <End Type="Self.tblUser" Multiplicity="0..1" Role="tblUser" />
-          <End Type="Self.tblInvoice" Multiplicity="*" Role="tblInvoice" />
+          <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
+          <End Role="tblInvoice" Type="Self.tblInvoice" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblUser">
               <PropertyRef Name="UserId" />
@@ -103,8 +103,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__tblOrder__BookId__2E1BDC42">
-          <End Type="Self.tblBooks" Multiplicity="0..1" Role="tblBooks" />
-          <End Type="Self.tblOrder" Multiplicity="*" Role="tblOrder" />
+          <End Role="tblBooks" Type="Self.tblBooks" Multiplicity="0..1" />
+          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblBooks">
               <PropertyRef Name="BookId" />
@@ -115,8 +115,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__tblOrder__UserId__2F10007B">
-          <End Type="Self.tblUser" Multiplicity="0..1" Role="tblUser" />
-          <End Type="Self.tblOrder" Multiplicity="*" Role="tblOrder" />
+          <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
+          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblUser">
               <PropertyRef Name="UserId" />
@@ -133,24 +133,24 @@
           <EntitySet Name="tblOrder" EntityType="Self.tblOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__tblBooks__CatId__2B3F6F97" Association="Self.FK__tblBooks__CatId__2B3F6F97">
-            <End EntitySet="tblCategories" Role="tblCategories" />
-            <End EntitySet="tblBooks" Role="tblBooks" />
+            <End Role="tblCategories" EntitySet="tblCategories" />
+            <End Role="tblBooks" EntitySet="tblBooks" />
           </AssociationSet>
           <AssociationSet Name="FK__tblInvoic__Order__32E0915F" Association="Self.FK__tblInvoic__Order__32E0915F">
-            <End EntitySet="tblOrder" Role="tblOrder" />
-            <End EntitySet="tblInvoice" Role="tblInvoice" />
+            <End Role="tblOrder" EntitySet="tblOrder" />
+            <End Role="tblInvoice" EntitySet="tblInvoice" />
           </AssociationSet>
           <AssociationSet Name="FK__tblInvoic__UserI__31EC6D26" Association="Self.FK__tblInvoic__UserI__31EC6D26">
-            <End EntitySet="tblUser" Role="tblUser" />
-            <End EntitySet="tblInvoice" Role="tblInvoice" />
+            <End Role="tblUser" EntitySet="tblUser" />
+            <End Role="tblInvoice" EntitySet="tblInvoice" />
           </AssociationSet>
           <AssociationSet Name="FK__tblOrder__BookId__2E1BDC42" Association="Self.FK__tblOrder__BookId__2E1BDC42">
-            <End EntitySet="tblBooks" Role="tblBooks" />
-            <End EntitySet="tblOrder" Role="tblOrder" />
+            <End Role="tblBooks" EntitySet="tblBooks" />
+            <End Role="tblOrder" EntitySet="tblOrder" />
           </AssociationSet>
           <AssociationSet Name="FK__tblOrder__UserId__2F10007B" Association="Self.FK__tblOrder__UserId__2F10007B">
-            <End EntitySet="tblUser" Role="tblUser" />
-            <End EntitySet="tblOrder" Role="tblOrder" />
+            <End Role="tblUser" EntitySet="tblUser" />
+            <End Role="tblOrder" EntitySet="tblOrder" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
