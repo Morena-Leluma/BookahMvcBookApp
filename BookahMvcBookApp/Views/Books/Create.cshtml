@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-@using (Html.BeginForm("Create","Books", FormMethod.Post, new { enctype="multipart/form - data"}))
+@using (Html.BeginForm("Create","Books", FormMethod.Post, new { enctyp= "multipart/form-data" }))
 {
 
     <div class="container">
@@ -51,7 +51,7 @@
 
                     <div class="form-group">
                         <span>Select Picture:</span>
-                        <input type="file" name="Picture" />
+                        @Html.TextBoxFor(m => m.Picture, new { type = "file" })
                     </div>
 
                     <div class="form-group">

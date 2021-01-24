@@ -197,16 +197,6 @@
     <Content Include="js\popper.min.js" />
     <Content Include="js\range.js" />
     <Content Include="js\scrollax.min.js" />
-    <Content Include="Models\dbBookahMvcBookAppModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>dbBookahMvcBookAppModel.Context.cs</LastGenOutput>
-      <DependentUpon>dbBookahMvcBookAppModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\dbBookahMvcBookAppModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbBookahMvcBookAppModel.edmx</DependentUpon>
-      <LastGenOutput>dbBookahMvcBookAppModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -225,48 +215,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbBookahMvcBookAppModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbBookahMvcBookAppModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\dbBookahMvcBookAppModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbBookahMvcBookAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\dbBookahMvcBookAppModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbBookahMvcBookAppModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\MyRoleProvider.cs" />
-    <Compile Include="Models\tblBook.cs">
-      <DependentUpon>dbBookahMvcBookAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblCategory.cs">
-      <DependentUpon>dbBookahMvcBookAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblInvoice.cs">
-      <DependentUpon>dbBookahMvcBookAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblOrder.cs">
-      <DependentUpon>dbBookahMvcBookAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblUser.cs">
-      <DependentUpon>dbBookahMvcBookAppModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\dbBookahMvcBookAppModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbBookahMvcBookAppModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\dbBookahMvcBookAppModel.edmx.diagram">
-      <DependentUpon>dbBookahMvcBookAppModel.edmx</DependentUpon>
-    </Content>
     <Content Include="css\.DS_Store" />
     <Content Include="css\bootstrap\.DS_Store" />
     <Content Include="css\css\.DS_Store" />
